@@ -5,7 +5,7 @@ ul{
 	list-style: none;
 }
 li.shot .thumbnail{
-	min-height: 250px;
+	min-height: 200px;
 }
 li.shot .thumbnail .wrapper-pic{
 	position: relative;
@@ -18,32 +18,42 @@ li.shot strong{
 	display: block;
 	font-size: 1em;
 }
-li.shot a{
-	margin-left: 15%;
-}
-.shot ul.meta-info{
+li.shot .meta-info{
 	margin: 0; 
-	padding: 0;
+	padding: 20px 0 0;
 	position: absolute;
 	top: -100%;
 	width: 100%;
 	height: 100%;
-	background: rgba(0,0,0,0.8);
+	background: rgba(0,0,0,0.75);
 	-webkit-transition: 0.3s ease all;
 	-moz-transition: 0.3s ease all;
 	-ms-transition: 0.3s ease all;
 	-o-transition: 0.3s ease all;
 }
-.shot .thumbnail:hover ul.meta-info{
-	top:0;
+li.shot .meta-info a{
+	margin-left: 7%;
 }
-.shot .meta-info li{
+li.shot .meta-info .user a{
+	font-size: 1.3em;
+}
+li.shot .wrapper-pic:hover ul.meta-info{
+	top:0;
+	cursor: pointer;
+}
+
+li.shot .meta-info li{
 	display: inline-block;
 	font-size: 0.8em;
 }
-.shot .meta-info li:first-child{
+li.shot .meta-info li:first-child{
 	width: 100%;
 }
-.shot .meta-info li + li{
-	padding-left: 15%;
+li.shot .meta-info li + li{
+	padding-left: 10%;
+}
+li.shot .meta-info .glyphicon:before {
+	position: relative;
+	left: -5px;
+	top: 2px;
 }
