@@ -3,38 +3,49 @@
 <head>
 	<title>Angular training</title>
 	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="lib/css/bootstrap.min.css">
+	<link rel="stylesheet" href="lib/css/bootstrap.css">
+	<link rel="stylesheet" href="lib/css/normalize.css">
 	<link rel="stylesheet" href="css/custom.css">
 </head>
 <body ng-app="myAppModule">
-	<div class="navbar">
-		<a href="#" class="brand">Dribble best works</a>
+	<div class="alert bg-success">
+		<h1>Dribble best works</h1>
 	</div>
 	
-	<div class="row">
-		<div class="col-md-4">
-			<div ng-controller="shotsController">
-			 	<ul class="thumbnails">
-					<li ng-repeat="shot in list.shots" class="span3 shot">
-						<div class="thumbnail">
-							<a href="#/shots/{{shot.id}}">
-								<img ng-src="{{ shot.image_400_url }}" />	
-							</a>
-							<strong class="title">{{ shot.title }}</strong><br>
-							<a href="#/players/{{shot.player.username}}">
-								{{shot.player.username}}
-							</a>
-						</div>						
-					</li>
-			 	</ul>
-			
-				<p class="preview" ng-hide="list.length > 0">No se pudo cargar la playlist, Banana!!!</p>
-		
-		</div>
+	<div ng-controller="shotsController">
+	 	
+	 	<p class="alert bg-warning col-md-4" ng-show="notfound" id="alert">Problemas para cargar el archivo de Lista :(
+	 	<button type="button" class="close" id="close"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button></p>
+
+	 	<ul class="thumbnails">
+			<li ng-repeat="shot in list" class="col-md-2 shot">
+				<div class="thumbnail">
+					<div class="wrapper-pic">
+						<a href="#/shots/{{shot.id}}">
+							<img ng-src="{{ shot.images.teaser }}" />	
+						</a>
+						<ul class="meta-info">
+							<li class="user">
+								<a href="#/players/{{shot.user.username}}">{{shot.user.username}}</a>
+							</li>
+							<li class="">{{shot.views_count}}</li>
+							<li>{{shot.comments_count}}</li>
+							<li>{{shot.likes_count}}</li>
+						</ul>
+					</div>
+
+
+
+					<strong class="title">{{ shot.title }}</strong>
+					
+				</div>						
+			</li>
+	 	</ul>		
 	</div>
 
-	<script src="lib/js/angular.min.js"></script>
+	<script src="lib/js/angular.min.js" type="text/javascript"></script>
 	<script src="js/controllers.js" type="text/javascript"></script>
 	<script src="js/app.js" type="text/javascript"></script>
+	<script src="js/functions.js" type="text/javascript"></script>
 </body>
 </html>

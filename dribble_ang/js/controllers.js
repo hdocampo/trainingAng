@@ -1,26 +1,25 @@
 var controllers = angular.module("shotsController", []);
 
 controllers.controller("shotsController", function ($http, $scope) {
-	
-	// $scope.list = {};
-	//$http.get("http://api.dribbble.com/shots/popular")
-	//
-	//
 
-	$http.get("dribbleapi.json")
+	$scope.notfound = false;
+	
+	$http.get("https://api.dribbble.com/v1/shots?access_token=dfe95ac4ba457e05fa0e16e58fb13cd821a01120e4f93befa09784839e9e7dbb")
+	
 	.catch(function(){
-		$scope.noPlaylist = !$scope.noPlaylist;
+		$scope.notfound = true;
 	})
 	.then( function (data) {
-		// $scope.playlistFull = data.data.playlist;
+		
 		 $scope.list = data.data;
 		 console.log(data);
+		 
+		 /* var shotsReceived = $scope.list.length;
+		 for(var i = 0; i < shotsReceived; i++){
+		 	console.log( $scope.list[i] );
+		 } */
+
 	});
 
 	
 });
-
-controllers.controller("nameOfController", function ($scope){
-	$scope.list;
-
-})
