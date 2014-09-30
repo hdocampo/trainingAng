@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+	<title>Angular training</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="bootstrap.min.css">
+	<link rel="stylesheet" href="custom.css">
+</head>
+<body ng-app="myAppModule">
+	<div class="row">
+		<div class="col-md-4">
+			<div ng-controller="countryController as world">
+			 	<ul class="list-group">
+			 		<li class="list-group-item" ng-repeat="onecountry in world.countries" ng-show="onecountry.enabled">{{ onecountry.name + " &raquo; " + onecountry.shortcode }}</li>
+			 	</ul>
+			
+				<div class="form-group">
+					<form novalidate name="submitForm" ng-controller="countrySubmit as ctryCtrl" ng-submit="ctryCtrl.addCtry()" >
+
+						<input class="form-control" type="text" placeholder="Pone un pais" ng-model="ctryCtrl.name" />
+
+						<br>
+		
+						<input class="form-control" type="text" placeholder="Pone el ShortCode" ng-model="ctryCtrl.shortcode"/>
+						
+						<br>
+
+						<input type="hidden" ng-model="ctryCtrl.enabled" value="true" /> 
+						
+						<br clear="all">
+						<div class="preview" ng-show="ctryCtrl.shortcode.length > 0 && ctryCtrl.name.length > 0">Preview: 
+							{{ ctryCtrl.name + " / "+ ctryCtrl.shortcode }}
+						</div>
+						
+						<br clear="all">
+						<button type="submit" class="btn btn-md btn-success">Submit</button> 
+					</form>
+				</div>	
+
+			</div>
+		
+		</div>
+	</div>
+
+	<script src="angular.min.js"></script>
+	<script src="app2.js" type="text/javascript"></script>
+</body>
+</html>

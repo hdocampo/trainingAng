@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+	<title>Angular training</title>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+</head>
+<body ng-app="store">
+	<div ng-controller="StoreController">
+	 	<ul>
+	 		<li ng-repeat="x in countries">{{ x.name + " &raquo; " + x.shortcode }}</li>
+	 	</ul>
+	</div>
+	
+
+	<script>
+(function(){
+
+	var app = angular.module("store", []);
+	app.controller("StoreController", function ($scope) {
+		$scope.countries = [
+			{ name: "Uruguay", shortcode: "UY" }, 
+			{ name: "Argentina", shortcode: "AR" }, 
+			{ name: "Brasil", shortcode: "BR" }
+		];
+	});
+
+
+})();
+	
+	</script>
+</body>
+</html>

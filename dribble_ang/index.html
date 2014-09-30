@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+	<title>Angular training</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="lib/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/custom.css">
+</head>
+<body ng-app="myAppModule">
+	<div class="navbar">
+		<a href="#" class="brand">Dribble best works</a>
+	</div>
+	
+	<div class="row">
+		<div class="col-md-4">
+			<div ng-controller="shotsController">
+			 	<ul class="thumbnails">
+					<li ng-repeat="shot in list.shots" class="span3 shot">
+						<div class="thumbnail">
+							<a href="#/shots/{{shot.id}}">
+								<img ng-src="{{ shot.image_400_url }}" />	
+							</a>
+							<strong class="title">{{ shot.title }}</strong><br>
+							<a href="#/players/{{shot.player.username}}">
+								{{shot.player.username}}
+							</a>
+						</div>						
+					</li>
+			 	</ul>
+			
+				<p class="preview" ng-hide="list.length > 0">No se pudo cargar la playlist, Banana!!!</p>
+		
+		</div>
+	</div>
+
+	<script src="lib/js/angular.min.js"></script>
+	<script src="js/controllers.js" type="text/javascript"></script>
+	<script src="js/app.js" type="text/javascript"></script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+{ "playlist" : [
+			{
+	            "track": "Brindis por Pierrot",
+	            "artist": "Canario Luna",
+	            "album": "Clasicos",
+	            "time": "4:25"
+	        },
+	        {
+				"track": "Here I command",
+	            "artist": "Metallica",
+	            "album": "Black Album",
+	            "time": "4:25"
+	        },
+	        {
+				"track": "Never gonna be this way",
+	            "artist": "Algun grupito",
+	            "album": "The album loaded",
+	            "time": "2:25"
+	        }
+]}
