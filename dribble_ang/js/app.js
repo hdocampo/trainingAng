@@ -1,6 +1,6 @@
 (function(){
 
-	var app = angular.module("myAppModule", ["shotsController"]);
+	var app = angular.module("myAppModule", ["shotsController", "dabbble.services"]);
 
 })();
 
