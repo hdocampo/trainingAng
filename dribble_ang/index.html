@@ -14,31 +14,11 @@
 	
 	<div ng-controller="shotsController">
 	 	
-	 	<p class="alert bg-warning col-md-4" ng-show="notfound" id="alert">Problemas para cargar el archivo de Lista :(
-	 	<button type="button" class="close" id="close"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button></p>
+		<alert></alert>
 
 	 	<ul class="thumbnails">
 			<li ng-repeat="shot in list" class="col-md-2 shot">
-				<div class="thumbnail">
-					<div class="wrapper-pic">
-						<a href="#/shots/{{shot.id}}">
-							<img ng-src="{{ shot.images.teaser }}" />	
-						</a>
-						<ul class="meta-info">
-							<li class="user">
-								<a href="#/players/{{shot.user.username}}">{{shot.user.username}}</a>
-							</li>
-							<li class="glyphicon glyphicon-eye-open">{{shot.views_count}}</li>
-							<li class="glyphicon glyphicon-comment">{{shot.comments_count}}</li>
-							<li class="glyphicon glyphicon-heart">{{shot.likes_count}}</li>
-						</ul>
-					</div>
-
-
-
-					<strong class="title">{{ shot.title }}</strong>
-					
-				</div>						
+				<my-thumbnail></my-thumbnail>
 			</li>
 	 	</ul>		
 	</div>

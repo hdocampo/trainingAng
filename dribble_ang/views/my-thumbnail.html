@@ -1,0 +1,16 @@
+				<div class="thumbnail">
+					<div class="wrapper-pic">
+						<a href="#/shots/{{shot.id}}">
+							<img ng-src="{{ shot.images.teaser }}" />	
+						</a>
+						<ul class="meta-info">
+							<li class="user">
+								<a href="#/players/{{shot.user.username}}">{{shot.user.username}}</a>
+							</li>
+							<li class="glyphicon glyphicon-eye-open">{{shot.views_count}}</li>
+							<li class="glyphicon glyphicon-comment">{{shot.comments_count}}</li>
+							<li class="glyphicon glyphicon-heart">{{shot.likes_count}}</li>
+						</ul>
+					</div>
+					<strong class="title">{{ shot.title }}</strong>	
+				</div>		

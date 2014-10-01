@@ -10,16 +10,21 @@ controllers.controller("shotsController", function ($http, $scope) {
 		$scope.notfound = true;
 	})
 	.then( function (data) {
-		
 		 $scope.list = data.data;
-		 console.log(data);
-		 
-		 /* var shotsReceived = $scope.list.length;
-		 for(var i = 0; i < shotsReceived; i++){
-		 	console.log( $scope.list[i] );
-		 } */
-
 	});
 
-	
 });
+
+controllers.directive('myThumbnail', function() {
+    return {
+    restrict: 'E',
+    templateUrl: 'views/my-thumbnail.html'
+  	};
+});
+
+controllers.directive('alert', function() {
+    return {
+    restrict: 'E',
+    templateUrl: 'views/alert.html'
+  	};
+  });
