@@ -1,4 +1,4 @@
-var controllers = angular.module("shotsController");
+var controllers = angular.module("shots.controllers");
 
 controllers.directive('myThumbnail', function() {
     return {
@@ -7,9 +7,9 @@ controllers.directive('myThumbnail', function() {
   	};
 });
 
-controllers.directive('alert', function() {
+controllers.directive('myAlert', function() {
     return {
     restrict: 'E',
-    templateUrl: 'views/alert.html'
+    templateUrl: 'views/my-alert.html'
   	};
 });

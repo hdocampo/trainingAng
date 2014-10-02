@@ -1,6 +1,6 @@
-var controllers = angular.module("shotsController", []);
+var controllers = angular.module("shots.controllers", []);
 
-controllers.controller("shotsController", function ($http, $scope, dribbble) {
+controllers.controller("shotsCtrl", function ($http, $scope, shotsApi, $routeParams) {
 
 	$scope.notfound = false;
 	$scope.alert = false;
@@ -9,10 +9,11 @@ controllers.controller("shotsController", function ($http, $scope, dribbble) {
 		$scope.notfound  = !$scope.notfound;
 	}
 
-	dribbble.getShots().then(function (data) {
+	shotsApi.getShots().then(function (data) {
 		$scope.list = data;
 	}, function () {
 		$scope.notfound = true;
 		$scope.alert = true;
 	});
+
 });

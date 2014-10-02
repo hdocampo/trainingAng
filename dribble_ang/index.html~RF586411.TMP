@@ -15,7 +15,7 @@
 	<div ng-view></div>
 
 	<script src="lib/js/angular.min.js" type="text/javascript"></script>
-	<script src="lib/js/angular-route.js" type="text/javascript"></script>
+	<script src="lib/js/angular-rout.js" type="text/javascript"></script>
 	<script src="js/app.js" type="text/javascript"></script>
 	<script src="js/controllers.js" type="text/javascript"></script>
 	<script src="js/directives.js" type="text/javascript"></script>
