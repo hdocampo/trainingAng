@@ -10,12 +10,21 @@
 <body ng-app="shots">
 	<div class="alert bg-success">
 		<h1>Dribble best works</h1>
+		<nav>
+			<ul>
+				<li><a href="#/popular">Popular</a></li>
+				<li><a href="#/debuts">Debuts</a></li>
+				<li><a href="#/playoffs">Playoffs</a></li>
+				<li><a href="#/all">All</a></li>
+			</ul>
+		</nav>
 	</div>
 	
-	<div ng-view></div>
+	<div ng-view class="wrapper-view"></div>
 
 	<script src="lib/js/angular.min.js" type="text/javascript"></script>
 	<script src="lib/js/angular-route.js" type="text/javascript"></script>
+	<script src="lib/js/angular-animate.js"></script>
 	<script src="js/app.js" type="text/javascript"></script>
 	<script src="js/controllers.js" type="text/javascript"></script>
 	<script src="js/directives.js" type="text/javascript"></script>
